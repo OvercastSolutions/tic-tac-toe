@@ -1,0 +1,25 @@
+
+body {
+    background-color: #F0F0F0;
+}
+
+#top-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: #FFFFFF;
+}
+
+#side-panel {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 256px;
+    padding: 1%;
+    background-color: #3B3B3B;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
