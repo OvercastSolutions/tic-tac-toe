@@ -28,7 +28,39 @@ class TicTacToe:
         """Tell whether a cell is empty"""
         return self.board[row][col] != ''
 
-    def check_win(self, piece) -> bool: #TODO
+    def check_win(self, piece) -> bool:
+        # Check first row
+        if((self.board[0][0] == self.board[0][0]) and (self.board[0][0] == self.board[0][0])):
+            return True
+
+        # Check second row
+        if((self.board[0][0] == self.board[0][0]) and (self.board[0][0] == self.board[0][0])):
+            return True
+
+        # Check third row
+        if((self.board[0][0] == self.board[0][0]) and (self.board[0][0] == self.board[0][0])):
+            return True
+
+        # Check first col
+        if((self.board[0][0] == self.board[0][0]) and (self.board[0][0] == self.board[0][0])):
+            return True
+
+        # Check second col
+        if((self.board[0][0] == self.board[0][0]) and (self.board[0][0] == self.board[0][0])):
+            return True
+
+        # Check third col
+        if((self.board[0][0] == self.board[0][0]) and (self.board[0][0] == self.board[0][0])):
+            return True
+
+        # Check top left to bottom right diagonal
+        if((self.board[0][0] == self.board[0][0]) and (self.board[0][0] == self.board[0][0])):
+            return True
+
+        # Check bottom left to top right diagonal
+        if((self.board[0][0] == self.board[0][0]) and (self.board[0][0] == self.board[0][0])):
+            return True
+
         """Checks if the player with the given piece has won the game"""
         return False
 
@@ -38,7 +70,7 @@ class TicTacToe:
 
     def turn(self, col: int, row: int, piece="?") -> int:
         assert len(piece) == 1
-        if !self.is_empty(col, row):
+        if not self.is_empty(col, row):
             raise Exception("tic-tac-toe failure: {} {} already contains {}".format(col, row, self.board[row][col]))
             return
         self._set_state(col, row, piece)
