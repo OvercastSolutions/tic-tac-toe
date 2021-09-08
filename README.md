@@ -10,7 +10,7 @@ Using Flask  on Windows:
 		*1) py -m venv
 		2) env\Scripts\activate
 		*3) pip install flask
-		4) set FLASK_APP = app.py
+		*4) set FLASK_APP = app.py
 		5) flask run
 
 		*Only necessary during initial intallation
