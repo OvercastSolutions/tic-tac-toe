@@ -28,40 +28,63 @@ class TicTacToe:
         """Tell whether a cell is empty"""
         return self.board[row][col] != ''
 
-    def check_win(self, piece) -> bool:
+
+    # Function: check_win()
+    # Parameters: Game board object
+    # Returns: bool whether the game has been won or not
+    # Description:
+    #   Checks the eight possible win conditions for tic-tac-toe,
+    #   returning true if any of them are met. This consists of
+    #   the three rows, three columns, and the two diagonals. The
+    #   board is as follows ([row][column]):
+    #
+    #   [0][0] | [0][1] | [0][2]
+    #   -------|--------|-------
+    #   [1][0] | [1][1] | [1][2]
+    #   -------|--------|-------
+    #   [2][0] | [2][1] | [2][2]
+
+    def check_win(self) -> bool:
+        
         # Check first row
-        if((self.board[0][0] == self.board[0][0]) and (self.board[0][0] == self.board[0][0])):
-            return True
+        if(not(is_empty(0,0))):
+            if((self.board[0][0] == self.board[0][1]) and (self.board[0][0] == self.board[0][2])):
+                return True
 
         # Check second row
-        if((self.board[0][0] == self.board[0][0]) and (self.board[0][0] == self.board[0][0])):
-            return True
+        if(not(is_empty(0,1))):
+            if((self.board[1][0] == self.board[1][1]) and (self.board[1][0] == self.board[1][2])):
+                return True
 
         # Check third row
-        if((self.board[0][0] == self.board[0][0]) and (self.board[0][0] == self.board[0][0])):
-            return True
+        if(not(is_empty(0,2))):
+            if((self.board[2][0] == self.board[2][1]) and (self.board[2][0] == self.board[2][2])):
+                return True
 
         # Check first col
-        if((self.board[0][0] == self.board[0][0]) and (self.board[0][0] == self.board[0][0])):
-            return True
+        if(not(is_empty(0,0))):
+            if((self.board[0][0] == self.board[1][0]) and (self.board[0][0] == self.board[2][0])):
+                return True
 
         # Check second col
-        if((self.board[0][0] == self.board[0][0]) and (self.board[0][0] == self.board[0][0])):
-            return True
+        if(not(is_empty(1,0))):
+            if((self.board[0][1] == self.board[1][1]) and (self.board[0][1] == self.board[2][1])):
+                return True
 
         # Check third col
-        if((self.board[0][0] == self.board[0][0]) and (self.board[0][0] == self.board[0][0])):
-            return True
+        if(not(is_empty(2,0))):
+            if((self.board[0][2] == self.board[1][2]) and (self.board[0][2] == self.board[2][2])):
+                return True
 
         # Check top left to bottom right diagonal
-        if((self.board[0][0] == self.board[0][0]) and (self.board[0][0] == self.board[0][0])):
-            return True
+        if(not(is_empty(1,1))):
+            if((self.board[0][0] == self.board[1][1]) and (self.board[0][0] == self.board[2][2])):
+                return True
 
         # Check bottom left to top right diagonal
-        if((self.board[0][0] == self.board[0][0]) and (self.board[0][0] == self.board[0][0])):
-            return True
+            if((self.board[2][0] == self.board[1][1]) and (self.board[2][0] == self.board[0][2])):
+                return True
 
-        """Checks if the player with the given piece has won the game"""
         return False
 
     def is_stalemate(self) -> bool:
