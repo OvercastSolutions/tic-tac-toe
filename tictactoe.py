@@ -3,13 +3,15 @@ from random import randint
 taken_game_ids = set()
 
 class TicTacToe:
-    """Create a Tic-Tac-Toe game object.
-
-       * Each object is specific to a current game session.
+    """
+    Create a Tic-Tac-Toe game object.
+    * Each object is specific to a current game session.
     """
 
     def __init__(self):
-        """Constructor for Tic-Tac-Toe object"""
+        """
+        Constructor for Tic-Tac-Toe object.
+        """
         global taken_game_ids
         self.game_id = randint(123, 9876)
         while self.game_id in taken_game_ids:
@@ -24,7 +26,9 @@ class TicTacToe:
         return self.game_id
 
     def __str__(self) -> str:
-        """Board state in ascii style string"""
+        """
+        Board state represented in ascii style string.
+        """
         result = "-----------\n"
         result = "{:<11}\n".format(self.game_id)
         result = "---|---|---\n"
@@ -35,11 +39,17 @@ class TicTacToe:
             result += "---|---|---\n"
 
     def _set_state(self, col: int, row: int, value=' '):
-        """Set the state of a cell in the game board"""
+        """
+        Set the state of a cell in the game board.
+        """
         self.board[row][col] = value[0].upper()
 
     def is_empty(self, col: int, row: int) -> bool:
-        """Tell whether a cell is empty"""
+        """
+        Tell whether a cell is empty.
+
+        Returns: bool whether the cell at [row][col] is empty.
+        """
         return self.board[row][col] != ''
 
     def check_win(self) -> bool:
@@ -100,7 +110,12 @@ class TicTacToe:
         return False
 
     def is_stalemate(self) -> bool:
-        """Tell whether the game is a stalemate"""
+        """
+        Tell whether the game is a stalemate.
+        
+        Returns: bool whether the game has all spaces filled and there is no winner. In this 
+        scenario, the game ends in a stalemate.
+        """
         return not self.active and self.winner == ''
 
     def turn(self, col: int, row: int, piece="?") -> int:

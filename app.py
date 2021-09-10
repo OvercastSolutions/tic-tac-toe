@@ -10,6 +10,9 @@ app = Flask(__name__)
 games = []
 
 def game_by_n(n: int) -> TicTacToe:
+    """
+    Checks if there is a loaded game of a given ID number.
+    """
     global games
     for game in games:
         print("** comparing {} with {}".format(game.get_n(), n))
@@ -20,6 +23,10 @@ def game_by_n(n: int) -> TicTacToe:
     return None
 
 def print_current_games():
+    """
+    Prints the currently loaded games of tic-tac-toe.
+
+    """
     global games
     result = "** current games: "
     for game in games:
