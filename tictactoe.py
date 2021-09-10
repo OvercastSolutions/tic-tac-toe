@@ -28,24 +28,21 @@ class TicTacToe:
         """Tell whether a cell is empty"""
         return self.board[row][col] != ''
 
-
-    # Function: check_win()
-    # Parameters: Game board object
-    # Returns: bool whether the game has been won or not
-    # Description:
-    #   Checks the eight possible win conditions for tic-tac-toe,
-    #   returning true if any of them are met. This consists of
-    #   the three rows, three columns, and the two diagonals. The
-    #   board is as follows ([row][column]):
-    #
-    #   [0][0] | [0][1] | [0][2]
-    #   -------|--------|-------
-    #   [1][0] | [1][1] | [1][2]
-    #   -------|--------|-------
-    #   [2][0] | [2][1] | [2][2]
-
     def check_win(self) -> bool:
-        
+        """Checks the eight possible win conditions for tic-tac-toe,
+           returning true if any of them are met. This consists of
+           the three rows, three columns, and the two diagonals. The
+           board is as follows ([row][column]):
+
+           Returns: bool whether the game has been won or not
+
+           [0][0] | [0][1] | [0][2]
+           -------|--------|-------
+           [1][0] | [1][1] | [1][2]
+           -------|--------|-------
+           [2][0] | [2][1] | [2][2]
+        """
+
         # Check first row
         if(not(is_empty(0,0))):
             if((self.board[0][0] == self.board[0][1]) and (self.board[0][0] == self.board[0][2])):
