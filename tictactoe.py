@@ -1,18 +1,31 @@
+from random import randint
+
+taken_game_ids = set()
 
 class TicTacToe:
     """Create a Tic-Tac-Toe game object.
 
-       * Each object is specific to a player.
+       * Each object is specific to a current game session.
     """
 
     def __init__(self):
         """Constructor for Tic-Tac-Toe object"""
+        global taken_game_ids
+        self.game_id = randint(123, 987654321)
+        while self.game_id in taken_game_ids:
+            self.game_id = randint(123, 987654321)
+        taken_game_ids.add(self.game_id)
         self.board = [['', '', ''],['', '', ''],['', '', '']]
         self.active = True
         self.winner = ''
 
+    def get_n(self) -> int:
+        return self.game_id
+
     def __str__(self) -> str:
         """Board state in ascii style string"""
+        result = "-----------\n"
+        result = "{:<11}\n".format(self.game_id)
         result = "---|---|---\n"
         for row in self.board:
             result += "   |   |   \n"
