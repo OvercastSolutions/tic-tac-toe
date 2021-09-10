@@ -11,10 +11,11 @@ class TicTacToe:
     def __init__(self):
         """Constructor for Tic-Tac-Toe object"""
         global taken_game_ids
-        self.game_id = randint(123, 987654321)
+        self.game_id = randint(123, 9876)
         while self.game_id in taken_game_ids:
-            self.game_id = randint(123, 987654321)
+            self.game_id = randint(123, 9876)
         taken_game_ids.add(self.game_id)
+        print("** new tictactoe game with id #{}".format(self.game_id))
         self.board = [['', '', ''],['', '', ''],['', '', '']]
         self.active = True
         self.winner = ''
