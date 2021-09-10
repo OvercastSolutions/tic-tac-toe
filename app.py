@@ -36,12 +36,18 @@ def home():
     return render_template("home.html")
 
 @app.route('/new')
-def new_game():
+def new_game(): #TODO Make this not a route
     global games
     game = TicTacToe()
     games.append(game)
     print_current_games()
     return render_template("game.html", game_n=game.get_n())
+
+
+# FUTURE ROUTES:
+#@app.route('/n/<number>')   #See current board state
+#@app.route('/n/<number>/x') #Play as X
+#@app.route('/n/<number>/o') #Play as O
 
 @app.route('/n/<number>')
 def game(number: int): #TODO handle nonexistant games
